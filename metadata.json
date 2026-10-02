@@ -1,0 +1,6 @@
+{
+  "name": "Tura Secondary School - Mahafali ya Kidato cha Nne 2026",
+  "description": "Tovuti rasmi ya Mahafali ya Kidato cha Nne 2026 ya Tura Secondary School, Uyui, Tabora. Picha, ratiba, ujumbe na kumbukumbu za mahafali.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
