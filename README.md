@@ -87,33 +87,50 @@ http://localhost:3000
 
 ---
 
-## 🌐 5. KUPELEKA KWENYE VERCEL (VERCEL DEPLOYMENT)
+## 🐙 5. KUPAKIA KWENYE GITHUB (PUBLISH TO GITHUB — HATUA 2 TU)
 
-### STEP 1: Weka Kwenye Git & GitHub
-```bash
-git init
-git add .
-git commit -m "Tura Secondary School Graduation App 2026"
-git branch -M main
-git remote add origin https://github.com/JINA_LAKO/tura-graduation.git
-git push -u origin main
-```
+Mradi huu tayari umeanza na Git (`git init`), una tawi rasmi la `main`, faili bora la `.gitignore`, na GitHub Actions CI (`.github/workflows/ci.yml`).
 
-### STEP 2: Ingiza Kwenye Vercel
-1. Fungua [vercel.com](https://vercel.com) na uchague **Add New Project**.
-2. Chagua hazina yako ya GitHub (`tura-graduation`).
-3. Kwenye sehemu ya **Environment Variables**, weka:
-   ```text
-   NEXT_PUBLIC_SUPABASE_URL=thamani_yako
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=thamani_yako
-   SUPABASE_SERVICE_ROLE_KEY=thamani_yako
-   CLOUDINARY_CLOUD_NAME=thamani_yako
-   CLOUDINARY_API_KEY=thamani_yako
-   CLOUDINARY_API_SECRET=thamani_yako
-   ADMIN_EMAIL=admin@tura.ac.tz
-   ADMIN_PASSWORD=Nenosiri_Lako_Thabiti!
+Kupakia kwenye GitHub:
+1. Fungua [github.com/new](https://github.com/new) na uunde hazina mpya (New Repository), mfano `tura-secondary-graduation`. *(Usiweke tiki kwenye "Initialize with README", acha iwe tupu).*
+2. Kwenye terminal ya mradi huu, tekeleza amri hizi mbili tu:
+   ```bash
+   git remote add origin https://github.com/JINA_LAKO/tura-secondary-graduation.git
+   git push -u origin main
    ```
-4. Bofya **Deploy**.
+*(Badilisha `JINA_LAKO` na jina la akaunti yako ya GitHub).*
+
+---
+
+## 🌐 6. KUPELEKA KWENYE VERCEL (VERCEL DEPLOYMENT — RAHISI KABISA)
+
+Mradi huu umewekewa usanidi kamili wa faili la `vercel.json` hivyo unajenga (builds) moja kwa moja Vercel bila hitilafu yoyote:
+
+### Njia ya 1: Moja kwa moja kupitia GitHub (Rahisi Zaidi)
+1. Pakia mradi huu kwenye GitHub:
+   ```bash
+   git init
+   git add .
+   git commit -m "Tura Secondary School Graduation App 2026"
+   git branch -M main
+   git remote add origin https://github.com/JINA_LAKO/tura-graduation.git
+   git push -u origin main
+   ```
+2. Ingia kwenye [vercel.com](https://vercel.com) na ubofye **Add New... -> Project**.
+3. Chagua repository yako ya GitHub.
+4. **Vercel itatambua kiotomatiki (Auto-detect):**
+   - **Framework Preset:** `Vite`
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `dist`
+5. Bofya kitufe cha buluu cha **Deploy**! Ndani ya sekunde 30 tovuti itakuwa hewani moja kwa moja na kiunganishi cha `https://*.vercel.app`.
+
+### Njia ya 2: Kutumia Vercel CLI (Kwenye Terminal)
+```bash
+npm i -g vercel
+vercel
+# kisha kwa uzalishaji (production):
+vercel --prod
+```
 
 ---
 
